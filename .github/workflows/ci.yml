@@ -1,0 +1,30 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install
+        run: pip install -e ".[dev]"
+      - name: Lint
+        run: ruff check .
+      - name: Tests
+        run: pytest -q
+      - name: End-to-end CLI run on the example data
+        run: |
+          jobtracker --db /tmp/t.db --config examples/jobtracker.example.toml init
+          jobtracker --db /tmp/t.db --config examples/jobtracker.example.toml import-csv examples/applications.example.csv
+          jobtracker --db /tmp/t.db --config examples/jobtracker.example.toml --today 2026-01-19 due
+          jobtracker --db /tmp/t.db --config examples/jobtracker.example.toml --today 2026-01-19 report --week-of 2026-01-12

@@ -1,0 +1,34 @@
+# Example configuration. Copy to jobtracker.toml (git-ignored) and edit.
+# Every key is optional; anything left out uses the built-in default.
+
+# Days after the last update before a follow-up reminder is due, per status.
+[follow_up_days]
+applied = 7
+screen = 3
+interview = 2
+offer = 2
+
+# Applications still "applied" after this many days are marked ghosted by `jobtracker ghost`.
+ghost_after_days = 21
+
+# Where applications come from. `add` and `import-csv` reject anything else, which keeps the report clean.
+sources = ["job-board", "company-site", "referral", "recruiter", "other"]
+
+default_role_type = "other"
+
+# Role types for the report. First match wins; keywords are matched against the lower-cased job title.
+[[role_types]]
+name = "ml-engineering"
+keywords = ["machine learning engineer", "ml engineer", "mlops"]
+
+[[role_types]]
+name = "data-science"
+keywords = ["data scientist", "data science"]
+
+[[role_types]]
+name = "analytics"
+keywords = ["analyst", "analytics"]
+
+[[role_types]]
+name = "software"
+keywords = ["software engineer", "developer", "backend"]

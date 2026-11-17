@@ -1,0 +1,9 @@
+company,title,source,applied_on,location,url,status,status_on,notes
+Example Analytics Inc,Data Scientist,job-board,2026-01-05,Remote,https://jobs.example.com/101?utm_source=feed,screen,2026-01-08,
+Sample Robotics Ltd,Senior ML Engineer,referral,2026-01-05,Hybrid,,interview,2026-01-09,
+Demo Retail Co,Data Analyst,job-board,2026-01-06,Remote,https://jobs.example.com/102,,,
+Placeholder Health,Machine Learning Engineer,company-site,2026-01-06,Onsite,https://careers.example.org/ml-1,rejected,2026-01-12,
+Example Analytics,Data Scientist,job-board,2026-01-07,Remote,,,,same role as row 1; skipped as a duplicate
+Mock Finance LLC,Analytics Manager,recruiter,2026-01-08,Remote,,screen,2026-01-13,
+Test Logistics,Backend Developer,job-board,2026-01-12,Remote,https://jobs.example.com/103,,,
+Sample Media,Data Science Lead,referral,2026-01-13,Hybrid,,,,
