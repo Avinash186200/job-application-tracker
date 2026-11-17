@@ -1,5 +1,7 @@
 # job-application-tracker
 
+[![tests](https://github.com/Avinash186200/job-application-tracker/actions/workflows/ci.yml/badge.svg)](https://github.com/Avinash186200/job-application-tracker/actions/workflows/ci.yml)
+
 A small command-line tracker for a job search. It logs applications to SQLite, refuses duplicates, moves each
 application through a status pipeline, tells you which follow-ups are due, and writes a weekly report of which
 sources and role types actually get replies. Standard library only, Python 3.11+.
@@ -113,4 +115,4 @@ docs/           daily-process.md
 
 ## License
 
-MIT. See [CONTRIBUTING.md](CONTRIBUTING.md) and the [CHANGELOG](CHANGELOG.md).
+MIT. See [LICENSE](LICENSE). Contributing: [CONTRIBUTING.md](CONTRIBUTING.md). Changes: [CHANGELOG.md](CHANGELOG.md).
